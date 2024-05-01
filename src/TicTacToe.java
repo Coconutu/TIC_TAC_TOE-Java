@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 
+//https://www.youtube.com/watch?v=Nc77ymnm8Ss 5:16
+
 public class TicTacToe {
     int boardWidth=600;
     int boardHeight=650; //50 px for thenext panel on top
