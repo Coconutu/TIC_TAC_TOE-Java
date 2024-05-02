@@ -1,8 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-//https://www.youtube.com/watch?v=Nc77ymnm8Ss 13:39
-
+//https://www.youtube.com/watch?v=Nc77ymnm8Ss 18:40
 public class TicTacToe {
     int boardWidth=600;
     int boardHeight=650; //50 px for thenext panel on top
@@ -15,6 +16,7 @@ public class TicTacToe {
     String playerX="X";
     String playerO="O";
     String currentPlayer=playerX;
+    boolean gameOver=false;
 
 
 
@@ -52,7 +54,20 @@ public class TicTacToe {
                 tile.setForeground(Color.white);
                 tile.setFont(new Font("Arial",Font.BOLD,120));
                 tile.setFocusable(false);
-                tile.setText(currentPlayer);
+                //tile.setText(currentPlayer);
+                tile.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (gameOver) return;
+                        JButton tile = (JButton) e.getSource();
+                        if (tile.getText() == "") {
+                            tile.setText(currentPlayer);
+                            checkWinner();
+                            currentPlayer = currentPlayer == playerX ? playerO : playerX;
+                            textLabel.setText(currentPlayer + " 's turn");
+                        }
+                    }
+                });
             }
 
         }
