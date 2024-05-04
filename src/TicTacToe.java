@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-//https://www.youtube.com/watch?v=Nc77ymnm8Ss 18:40
+
 public class TicTacToe {
     int boardWidth=600;
     int boardHeight=650; //50 px for thenext panel on top
